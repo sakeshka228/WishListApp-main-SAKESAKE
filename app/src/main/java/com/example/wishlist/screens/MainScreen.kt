@@ -22,6 +22,7 @@ import androidx.compose.material3.BasicAlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -83,7 +84,7 @@ fun MainScreen(
                 shape = RoundedCornerShape(20),
 
                 onClick = {
-                    wishViewModel.changeAddingVision()
+                    navigationController.navigate(Screens.newScreen)
                 }
             ) {
                 Icon(
@@ -112,11 +113,10 @@ fun MainTopBar(
     var isOpen by remember {
         mutableStateOf(false)
     }
-    TopAppBar(
+    CenterAlignedTopAppBar(
         title = {
             Text(
                 text = "TASK LIST",
-                modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
                 fontSize = 18.sp
             )

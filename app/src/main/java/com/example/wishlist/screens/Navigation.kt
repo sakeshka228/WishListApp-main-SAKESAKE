@@ -26,5 +26,11 @@ fun Navigation() {
         ){
             EditWishScreen(viewModel, navigationController)
         }
+        composable(
+            route = Screens.newScreen
+        ){
+            NewScreen(navigationController)
+        }
     }
+
 }
